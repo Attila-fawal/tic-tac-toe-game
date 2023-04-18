@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    resetButton.addEventListener('click', resetBoard);
+    resetButton.addEventListener('click', () => resetBoard(true));
 
     playerSelect.addEventListener('change', () => {
         isAgainstComputer = playerSelect.value === 'computer';
@@ -82,12 +82,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    function resetBoard() {
+    function resetBoard(resetScores = false) {
         squares.forEach(square => {
             square.textContent = '';
             square.classList.remove('x-symbol', 'o-symbol');
         });
         currentPlayer = 'X';
+
+        if (resetScores) {
+            score.X = 0;
+            score.O = 0;
+            updateScore();
+        }
     }
 
     function playAgainstComputer() {
@@ -113,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function updateScore() {
-        playerXScore.textContent = score.X;
-        playerOScore.textContent = score.O;
+        playerXScore.textContent = `Player X: ${score.X}`;
+        playerOScore.textContent = `Player O: ${score.O}`;
     }
 });
