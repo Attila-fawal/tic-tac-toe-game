@@ -2,48 +2,46 @@ document.addEventListener('DOMContentLoaded', () => {
     const squares = document.querySelectorAll('.square');
     const resetButton = document.getElementById('reset');
     const playerSelect = document.getElementById('player-select');
+    const playerXScore = document.getElementById('player-x-score');
+    const playerOScore = document.getElementById('player-o-score');
     let currentPlayer = 'X';
     let isAgainstComputer = false;
+    const score = {
+        X: 0,
+        O: 0
+    };
 
-    // Add event listeners to each square
     squares.forEach(square => {
         square.addEventListener('click', () => {
-            // Check if the square is already marked
             if (square.textContent !== '') {
                 return;
             }
 
-            // Mark the square with the current player's symbol
             square.textContent = currentPlayer;
+            square.classList.add(currentPlayer === 'X' ? 'x-symbol' : 'o-symbol');
 
-            // Check if the current player has won
             if (checkWin()) {
                 alert(currentPlayer + ' wins!');
                 resetBoard();
                 return;
             }
 
-            // Check if the game is a tie
             if (checkTie()) {
                 alert('It\'s a tie!');
                 resetBoard();
                 return;
             }
 
-            // Switch to the other player's turn
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
-            // If playing against the computer and it's the computer's turn, call the playAgainstComputer function
             if (isAgainstComputer && currentPlayer === 'O') {
                 playAgainstComputer();
             }
         });
     });
 
-    // Add event listener to reset button
     resetButton.addEventListener('click', resetBoard);
 
-    // Add event listener to player select dropdown menu
     playerSelect.addEventListener('change', () => {
         isAgainstComputer = playerSelect.value === 'computer';
         if (isAgainstComputer && currentPlayer === 'O') {
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Function to check if the current player has won
     function checkWin() {
         const winConditions = [
             [0, 1, 2],
@@ -64,55 +61,59 @@ document.addEventListener('DOMContentLoaded', () => {
             [2, 4, 6]
         ];
 
-        return winConditions.some(condition => {
-            return condition.every(index => {
+        const isWinning = winConditions.some(condition => {
+            const isConditionMet = condition.every(index => {
                 return squares[index].textContent === currentPlayer;
             });
+
+            if (isConditionMet) {
+                score[currentPlayer]++;
+                updateScore();
+                return true;
+            }
         });
+
+        return isWinning;
     }
 
-    // Function to check if the game is a tie
     function checkTie() {
         return Array.from(squares).every(square => {
             return square.textContent !== '';
         });
     }
 
-    // Function to reset the board
     function resetBoard() {
         squares.forEach(square => {
             square.textContent = '';
+            square.classList.remove('x-symbol', 'o-symbol');
         });
         currentPlayer = 'X';
     }
 
-    // Function to play against the computer
     function playAgainstComputer() {
-        // Get a list of available squares
         const availableSquares = Array.from(squares).filter(square => square.textContent === '');
-
-        // Select a random square from the available squares
         const randomIndex = Math.floor(Math.random() * availableSquares.length);
         const selectedSquare = availableSquares[randomIndex];
-
-        // Mark the selected square with the computer's symbol
         selectedSquare.textContent = 'O';
+        selectedSquare.classList.add('o-symbol');
 
-        // Check if the computer has won
         if (checkWin()) {
             alert('Computer wins!');
             resetBoard();
             return;
         }
 
-        // Check if the game is a tie
         if (checkTie()) {
             alert('It\'s a tie!');
             resetBoard();
             return;
         }
 
-        // Switch to the other player's turn
         currentPlayer = 'X';
+    }
+
+    function updateScore() {
+        playerXScore.textContent = score.X;
+        playerOScore.textContent = score.O;
     }
 });
