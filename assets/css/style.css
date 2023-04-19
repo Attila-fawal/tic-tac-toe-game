@@ -162,11 +162,12 @@ footer {
     border-radius: 10px;
 }
 
-h3 {
+h2 {
     font-size: 30px;
     font-weight: bolder;
     margin-bottom: 5px;
-    margin-top: 5PX;
+    margin-top: 5px;
+    color: #000000;
 }
 
 p {
@@ -175,6 +176,7 @@ p {
         sans-serif;
     font-weight: bold;
     font-size: 18PX;
+    color: #000000;
 
 }
 

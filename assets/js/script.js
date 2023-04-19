@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 // Wait for the DOM to finish loading before running the code 
 document.addEventListener('DOMContentLoaded', () => {
     // DOM elements
@@ -273,4 +274,4 @@ document.addEventListener('DOMContentLoaded', () => {
         playerXScore.textContent = `Player X: ${score.X}`;
         playerOScore.textContent = `Player O: ${score.O}`;
     }
-})
+});
