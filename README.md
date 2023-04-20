@@ -5,8 +5,7 @@ This project is a browser-based Tic-Tac-Toe game with single-player and two-play
 
 . By interacting with this Tic-Tac-Toe game users can learn The Tic-Tac-Toe game rules so they can apply it to learn valuable skills and concepts by playing the game, including strategic thinking, decision-making, time management. or just wanna have a fun 
 
-![Screenshot (33)](https://user-images.githubusercontent.com/127791713/233343644-04b79289-4176-4b6b-a9e5-d8e41966628a.png)
-
+![Screenshot (38)](https://user-images.githubusercontent.com/127791713/233472990-03053e1d-9756-4851-8365-282f1ae79d58.png)
 
 
 ## Features
