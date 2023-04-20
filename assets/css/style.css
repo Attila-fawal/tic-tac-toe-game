@@ -34,7 +34,7 @@ h1 {
     border: 2px solid #555;
     font-size: 70px;
     text-align: center;
-    line-height: 1;
+    line-height: 100px;
     cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -233,12 +233,14 @@ p {
     }
 
     .x-symbol {
-        color: #06a2d1;
         font-size: 70px;
     }
 
     .o-symbol {
-        color: #fcba03;
         font-size: 70px;
+    }
+
+    .square {
+        line-height: 70px;
     }
 }
