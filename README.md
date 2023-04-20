@@ -17,7 +17,7 @@ The Header features top of the page shows the game name with game symbol so it c
 ### Game bord 
 The board is a 3x3 clickable when it's clicked highlight with X when is the X player turns or highlights with O when is the O player turns and if there is a winning sequence highlights with the winning player colour. 
 
-![Screenshot (30)](https://user-images.githubusercontent.com/127791713/233333789-c3457781-e798-4e5a-a07c-e3c5aa7cac4e.png)
+![Screenshot (36)](https://user-images.githubusercontent.com/127791713/233469136-5d684681-033b-483f-9eb1-5bb955ff9af2.png)
 
 ### Pop up message
 When there is a winner or the game is tie the pop up message shows up and restart the game with the timer.
@@ -90,6 +90,7 @@ A button for the users with the name difficulty level so they can adjust the ran
 
 
 . javascript no errors with JSHint JavaScript Validator.
+
 Metrics:
 There are 22 functions in this file.
 Function with the largest signature take 2 arguments, while the median is 0.
