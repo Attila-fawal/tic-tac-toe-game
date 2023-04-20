@@ -195,7 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (isMaximizingPlayer) {
             let bestVal = -Infinity;
-
             // Check each possible move on the board
             for (let i = 0; i < squares.length; i++) {
                 if (squares[i].textContent === '') {
@@ -207,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
             return bestVal;
         } else {
             let bestVal = Infinity;
-
             // Check each possible move on the board
             for (let i = 0; i < squares.length; i++) {
                 if (squares[i].textContent === '') {
@@ -243,10 +241,33 @@ document.addEventListener('DOMContentLoaded', () => {
         return bestMove;
     }
 
-    // playAgainstComputer function simulates the computer's turn in a game
+    // Make a random move for the computer
+    function randomMove() {
+        const emptySquares = [];
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i].textContent === '') {
+                emptySquares.push(i);
+            }
+        }
+        const randomIndex = Math.floor(Math.random() * emptySquares.length);
+        return emptySquares[randomIndex];
+    }
+
+    // Play a move for the computer based on the best move or a random move
     function playAgainstComputer() {
-        const bestMove = findBestMove();
-        const selectedSquare = squares[bestMove];
+        // Set a probability for the computer to make a random move you can decrease the probability to be more difficult
+        const randomMoveProbability = 0.3;
+
+        let selectedSquare;
+
+        if (Math.random() < randomMoveProbability) {
+            const randomIndex = randomMove();
+            selectedSquare = squares[randomIndex];
+        } else {
+            const bestMove = findBestMove();
+            selectedSquare = squares[bestMove];
+        }
+
         selectedSquare.textContent = 'O';
         selectedSquare.classList.add('o-symbol');
 
@@ -266,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPlayer = 'X';
         startTimer();
     }
+
 
     // Updates the score for both players on the screen
     function updateScore() {
