@@ -39,8 +39,9 @@ h1 {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
     aspect-ratio: 1 / 1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .square:hover {
@@ -242,5 +243,7 @@ p {
 
     .square {
         line-height: 70px;
+        min-height: 70px;
+        min-width: 70px;
     }
 }
