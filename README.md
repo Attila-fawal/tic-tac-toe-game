@@ -66,12 +66,15 @@ The game is implemented using JavaScript, with event listeners for user interact
 ## Testing
 I tested the game is working on different browsers and different size screens and it is responsive.
 
-![Screenshot (26)](https://user-images.githubusercontent.com/127791713/233349625-37a5524a-f966-420c-b1ac-4258e00496d8.png)
+![Screenshot (34)](https://user-images.githubusercontent.com/127791713/233452739-7c1d0f51-613d-4274-bbfa-3feee5841b13.png)
 
 ## Bugs fix
-. When I testing the game on small screens the X and the O was bigger then the square itself so it stretching it out so I needed to use media query for the symbols.
+. When I testing the game on small screens the X and the O was bigger then the square itself so it stretching it out so I needed to use media query for the symbols and for the squares.
 
 . The minimax algorithm was unbeatable so not very enjoyable for the users so I needed to add random move function with random move probability so it's adjustable at this stage it set at 30%.
+
+## Unfixed Bugs
+ no.
 
 ## Features left to implement
 A button for the users with the name difficulty level so they can adjust the random move probability so they can change the game difficulty level.
@@ -79,12 +82,29 @@ A button for the users with the name difficulty level so they can adjust the ran
 ## Validator Testing
 . html no errors with W3C HTML Validator testing.
 
+![Screenshot (23)](https://user-images.githubusercontent.com/127791713/233452237-18c67932-c277-4229-bd6f-cb7dffd7a368.png)
+
 . css no errors with W3C CSS Validator (Jigsaw) testing.
 
+![Screenshot (24)](https://user-images.githubusercontent.com/127791713/233452093-82a02149-e33d-4c77-b25e-8bcc0bb55ea2.png)
+
+
 . javascript no errors with JSHint JavaScript Validator.
+Metrics:
+There are 22 functions in this file.
+Function with the largest signature take 2 arguments, while the median is 0.
+Largest function has 23 statements in it, while the median is 4.5.
+The most complex function has a cyclomatic complexity value of 12 while the median is 2.
+
+![Screenshot (22)](https://user-images.githubusercontent.com/127791713/233452406-dd464c59-6300-451a-b89e-87bdc8303219.png)
 
 ## Deployment
-The site was deployed to github pages.
+The site was deployed to GitHub pages. The steps to deploy are as follows:
+
+.In the GitHub repository, navigate to the Settings tab
+.From the source section drop-down menu, select the Main Branch
+.Once the main branch has been selected, the page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
+.The live link can be found here: https://attila-fawal.github.io/tic-tac-toe-game/
 
 ## Credits
 google fonts.

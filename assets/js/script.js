@@ -71,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // checkWin function evaluates the current game state and determines if there is a winner
+    /**
+     * Determine if the current game state has a winner.
+     * @return {Boolean} true if there's a winner, false otherwise.
+     */
     function checkWin() {
         const winConditions = [
             [0, 1, 2],
@@ -105,7 +108,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return isWinning;
     }
 
-    // Reset the game board
+    /**
+     * Reset the game board.
+     * @param {Boolean} resetScores Reset scores if set to true.
+     */
     function resetBoard(resetScores = false) {
         clearInterval(countdownInterval);
         squares.forEach(square => {
@@ -123,14 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
         startTimer();
     }
 
-    // Check if the game is a tie
+    /**
+     * Check if the game is a tie.
+     * @return {Boolean} true if the game is a tie, false otherwise.
+     */
     function checkTie() {
         return Array.from(squares).every(square => {
             return square.textContent !== '';
         });
     }
 
-    // startTimer function begins the countdown for each player's turn
+    /**
+     * Start the countdown timer for each player's turn.
+     */
     function startTimer() {
         clearInterval(countdownInterval);
         let timeLeft = 15;
@@ -156,7 +167,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Evaluate the board to determine the score for the computer's move
+    /**
+     * Evaluate the board to determine the score for the computer's move.
+     * @return {Number} The score for the computer's move.
+     */
     function evaluateBoard() {
         const winConditions = [
             [0, 1, 2],
@@ -184,7 +198,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return 0;
     }
 
-    // Use the minimax algorithm to find the best move for the computer
+    /**
+     * Use the minimax algorithm to find the best move for the computer.
+     * @param {Number} depth Depth of the game tree.
+     * @param {Boolean} isMaximizingPlayer True if maximizing player, false if minimizing player.
+     * @return {Number} The best move score for the current player.
+     */
     function minimax(depth, isMaximizingPlayer) {
         const score = evaluateBoard();
 
@@ -210,7 +229,6 @@ document.addEventListener('DOMContentLoaded', () => {
             for (let i = 0; i < squares.length; i++) {
                 if (squares[i].textContent === '') {
                     squares[i].textContent = 'X';
-
                     bestVal = Math.min(bestVal, minimax(depth + 1, !isMaximizingPlayer));
                     squares[i].textContent = '';
                 }
@@ -219,7 +237,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Find the best move for the computer
+    /**
+     * Find the best move for the computer using the minimax algorithm.
+     * @return {Number} The index of the best move for the computer.
+     */
     function findBestMove() {
         let bestVal = -Infinity;
         let bestMove = -1;
@@ -241,7 +262,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return bestMove;
     }
 
-    // Make a random move for the computer
+    /**
+     * Make a random move for the computer.
+     * @return {Number} The index of the random move.
+     */
     function randomMove() {
         const emptySquares = [];
         for (let i = 0; i < squares.length; i++) {
@@ -253,7 +277,9 @@ document.addEventListener('DOMContentLoaded', () => {
         return emptySquares[randomIndex];
     }
 
-    // Play a move for the computer based on the best move or a random move
+    /**
+     * Play a move for the computer based on the best move or a random move.
+     */
     function playAgainstComputer() {
         // Set a probability for the computer to make a random move you can decrease the probability to be more difficult
         const randomMoveProbability = 0.3;
@@ -289,7 +315,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    // Updates the score for both players on the screen
+    /**
+     * Update the score for both players on the screen.
+     */
     function updateScore() {
 
         // Update the text content of the score elements to reflect the current score
