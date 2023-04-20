@@ -231,4 +231,14 @@ p {
     footer {
         margin-top: 65px;
     }
+
+    .x-symbol {
+        color: #06a2d1;
+        font-size: 80px;
+    }
+
+    .o-symbol {
+        color: #fcba03;
+        font-size: 80px;
+    }
 }

@@ -1,108 +1,100 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Attila fawal,
+# Tic Tac Toe Game
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+This project is a browser-based Tic-Tac-Toe game with single-player and two-player modes. The user can play against another person or against the computer, which uses a minimax algorithm to make its moves. The game also features a timer for each player's turn, and it keeps track of the score for both players.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+. By interacting with this Tic-Tac-Toe game users can learn The Tic-Tac-Toe game rules so they can apply it to learn valuable skills and concepts by playing the game, including strategic thinking, decision-making, time management. or just wanna have a fun 
 
-## Gitpod Reminders
+![Screenshot (33)](https://user-images.githubusercontent.com/127791713/233343644-04b79289-4176-4b6b-a9e5-d8e41966628a.png)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+## Features
+### Header
+The Header features top of the page shows the game name with game symbol so it clearly tells what game they are playing.
 
-Another blue button should appear to click: _Open Browser_.
+![header](https://user-images.githubusercontent.com/127791713/233330055-71484dde-f10d-4f93-aee2-0175d37c809a.png)
+### Game bord 
+The board is a 3x3 clickable when it's clicked highlight with X when is the X player turns or highlights with O when is the O player turns and if there is a winning sequence highlights with the winning player colour. 
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![Screenshot (30)](https://user-images.githubusercontent.com/127791713/233333789-c3457781-e798-4e5a-a07c-e3c5aa7cac4e.png)
 
-A blue button should appear to click: _Make Public_,
+### Pop up message
+When there is a winner or the game is tie the pop up message shows up and restart the game with the timer.
 
-Another blue button should appear to click: _Open Browser_.
+![Screenshot (31)](https://user-images.githubusercontent.com/127791713/233336149-00a524fd-c851-4f3c-a503-f744fee994ac.png)
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### Scoreboard
+The scoreboard have the same colors as X & O every time there is a winner the scoreboards keep track and add value.
 
-To log into the Heroku toolbelt CLI:
+![Screenshot (30)x](https://user-images.githubusercontent.com/127791713/233339544-293873eb-d22f-4b2f-b660-15246811571b.png)
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+### Timer
+The timer start from 15 seconds for each player and if the user play against the computer
+and the time is up the computer will move again.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+![Screenshot (30)xx](https://user-images.githubusercontent.com/127791713/233339350-13f93239-0c4e-4ffb-8fd7-b65f7d7bf542.png)
 
-------
+### Select playstyle
+The select play style you can choose if you want to play against another user or against the computer.
 
-## Release History
+![Screenshot (32)](https://user-images.githubusercontent.com/127791713/233340783-57fb09c9-557b-4315-a63f-9e3b6d9b9c19.png)
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### Reset button
+The reset button you can use it to restart the game board the timer and the scoreboard every time gets clicked.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+![Screenshot (30)](https://user-images.githubusercontent.com/127791713/233341465-87fc12a3-1e45-42bd-a5f5-a374271f0cc7.png)
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Footer
+The Footer it's a brief introduction for the game rules.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+![Screenshot (28)](https://user-images.githubusercontent.com/127791713/233342136-cb66a168-18ed-4464-87f8-9afbaa7123a2.png)
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## How to Play
+By default, the game starts in two-player mode. Player X starts the game.
+If you want to play against the computer, change the player selection option to "Computer."
+Click on an empty square to make a move.
+The timer counts down from 15 seconds for each player's turn. If time runs out, the turn switches to the other player or the computer.
+The game continues until there is a winner or a tie.
+The winning combination will be highlighted on the board and on The pop up message.
+The score for each player is displayed below the board.
+To reset the game board and the scoreboard, click the "Reset" button.
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## Implementation Details
+The game is implemented using JavaScript, with event listeners for user interactions such as selecting squares, resetting the board, and changing player options. The game logic includes functions for checking win conditions, checking for a tie, handling timers, and updating scores. In single-player mode, the computer opponent utilizes a minimax algorithm to determine its moves, with a configurable probability of making random moves for varying difficulty levels.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Testing
+I tested the game is working on different browsers and different size screens and it is responsive.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+![Screenshot (26)](https://user-images.githubusercontent.com/127791713/233349625-37a5524a-f966-420c-b1ac-4258e00496d8.png)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+## Bugs fix
+. When I testing the game on small screens the X and the O was bigger then the square itself so it stretching it out so I needed to use media query for the symbols.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+. The minimax algorithm was unbeatable so not very enjoyable for the users so I needed to add random move function with random move probability so it's adjustable at this stage it set at 30%.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Features left to implement
+A button for the users with the name difficulty level so they can adjust the random move probability so they can change the game difficulty level.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Validator Testing
+. html no errors with W3C HTML Validator testing.
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+. css no errors with W3C CSS Validator (Jigsaw) testing.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+. javascript no errors with JSHint JavaScript Validator.
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+## Deployment
+The site was deployed to github pages.
 
-------
+## Credits
+google fonts.
 
-## FAQ about the uptime script
+www.pngwing.com for the logo image.
 
-**Why have you added this script?**
+## Minimax Algorithm by John von Neumann
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+The minimax algorithm is a decision-making algorithm used in turn-based, two-player games. The algorithm helps determine the optimal move for a player by simulating all possible moves and their outcomes, assuming that both players play optimally.
 
-**How will this affect me?**
+In this project, the minimax algorithm is implemented to provide an AI opponent for the game of [Tic Tac Toe]. The AI makes decisions based on the game state and the evaluation function, which calculates the desirability of a particular game state for the AI player.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!
