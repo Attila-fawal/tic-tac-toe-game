@@ -14,10 +14,13 @@
 </head>
 
 <body>
-    <h1 class="heading">
-        <img class="logo" src="assets/images/logo1.png" alt="logo"> Tic Tac Toe
-    </h1>
-    <div id="board">
+    <header>
+        <h1 class="heading">
+            <img class="logo" src="assets/images/logo1.png" alt="logo"> Tic Tac Toe
+        </h1>
+    </header>
+
+    <section id="board">
         <div class="square" id="0"></div>
         <div class="square" id="1"></div>
         <div class="square" id="2"></div>
@@ -27,13 +30,14 @@
         <div class="square" id="6"></div>
         <div class="square" id="7"></div>
         <div class="square" id="8"></div>
-    </div>
+    </section>
+
     <button id="reset">Reset</button>
 
-    <div class="scoreboard">
+    <section class="scoreboard">
         <div id="player-x-score">Player X: 0</div>
         <div id="player-o-score">Player O: 0</div>
-    </div>
+    </section>
 
     <label for="player-select">Play against:</label>
     <select id="player-select">
@@ -42,6 +46,7 @@
     </select>
 
     <script src="assets/js/script.js"></script>
+
     <footer>
         <h2>game rules !</h2>
         <p>Tic Tac Toe is a classic two-player game that is played on a 3x3 grid. The game is played with X's and O's,
