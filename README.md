@@ -66,6 +66,9 @@ I tested the game is working on different browsers and different size screens an
 
 . The minimax algorithm was unbeatable so not very enjoyable for the users so I needed to add random move function with random move probability so it's adjustable at this stage it set at 30%.
 
+.  the issue in the checkTie() function. The function was checking if all squares are non-empty to determine a tie. However, if the last move completes a winning sequence, the checkWin() function will return true before the checkTie() function is called, resulting in a "tie" message instead of declaring the current player as the winner.
+To fix this issue,i modify the checkTie() function to first check for a win using the checkWin() function. If there is a win, it should return false to indicate that the game is not a tie and ensuring that the appropriate win message is displayed when the last move completes a winning sequence.
+
 ## Unfixed Bugs
  no.
 

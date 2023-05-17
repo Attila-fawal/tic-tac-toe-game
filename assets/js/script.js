@@ -125,12 +125,14 @@ document.addEventListener('DOMContentLoaded', () => {
      * @return {Boolean} true if the game is a tie, false otherwise.
      */
     function checkTie() {
-        return Array.from(squares).every(square => {
-            return square.textContent !== '';
-        });
+    if (checkWin()) {
+        return false;
     }
 
-
+    return Array.from(squares).every(square => {
+        return square.textContent !== '';
+    });
+}
 
     /**
      * Evaluate the board to determine the score for the computer's move.
