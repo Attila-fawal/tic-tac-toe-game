@@ -167,6 +167,13 @@ p {
 
 }
 
+.winning-square.x-score-color {
+    background-color: #06a2d1;
+}
+
+.winning-square.o-score-color {
+    background-color: #fcba03;
+}
 
 @media screen and (max-width: 750px) {
     h1 {
