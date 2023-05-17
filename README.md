@@ -1,11 +1,11 @@
 
 # Tic Tac Toe Game
 
-This project is a browser-based Tic-Tac-Toe game with single-player and two-player modes. The user can play against another person or against the computer, which uses a minimax algorithm to make its moves. The game also features a timer for each player's turn, and it keeps track of the score for both players.
+This project is a browser-based Tic-Tac-Toe game with single-player and two-player modes. The user can play against another person or against the computer, which uses a minimax algorithm to make its moves and it keeps track of the score for both players.
 
-. By interacting with this Tic-Tac-Toe game users can learn The Tic-Tac-Toe game rules so they can apply it to learn valuable skills and concepts by playing the game, including strategic thinking, decision-making, time management. or just wanna have a fun 
+. By interacting with this Tic-Tac-Toe game users can learn The Tic-Tac-Toe game rules so they can apply it to learn valuable skills and concepts by playing the game, including strategic thinking, decision-making or just wanna have a fun 
 
-![Screenshot (38)](https://user-images.githubusercontent.com/127791713/233472990-03053e1d-9756-4851-8365-282f1ae79d58.png)
+![Screenshot (54)](https://github.com/Attila-fawal/tic-tac-toe-game/assets/127791713/8dd7e524-4b84-4918-822e-be6daea7d191)
 
 
 ## Features
@@ -16,10 +16,10 @@ The Header features top of the page shows the game name with game symbol so it c
 ### Game bord 
 The board is a 3x3 clickable when it's clicked highlight with X when is the X player turns or highlights with O when is the O player turns and if there is a winning sequence highlights with the winning player colour. 
 
-![Screenshot (36)](https://user-images.githubusercontent.com/127791713/233469136-5d684681-033b-483f-9eb1-5bb955ff9af2.png)
+![Screenshot (53)](https://github.com/Attila-fawal/tic-tac-toe-game/assets/127791713/0a9478f1-7c71-462d-b45c-ddf434dc0b1e)
 
 ### Pop up message
-When there is a winner or the game is tie the pop up message shows up and restart the game with the timer.
+When there is a winner or the game is tie the pop up message shows up and restart the game.
 
 ![Screenshot (31)](https://user-images.githubusercontent.com/127791713/233336149-00a524fd-c851-4f3c-a503-f744fee994ac.png)
 
@@ -28,11 +28,6 @@ The scoreboard have the same colors as X & O every time there is a winner the sc
 
 ![Screenshot (30)x](https://user-images.githubusercontent.com/127791713/233339544-293873eb-d22f-4b2f-b660-15246811571b.png)
 
-### Timer
-The timer start from 15 seconds for each player and if the user play against the computer
-and the time is up the computer will move again.
-
-![Screenshot (30)xx](https://user-images.githubusercontent.com/127791713/233339350-13f93239-0c4e-4ffb-8fd7-b65f7d7bf542.png)
 
 ### Select playstyle
 The select play style you can choose if you want to play against another user or against the computer.
@@ -40,7 +35,7 @@ The select play style you can choose if you want to play against another user or
 ![Screenshot (32)](https://user-images.githubusercontent.com/127791713/233340783-57fb09c9-557b-4315-a63f-9e3b6d9b9c19.png)
 
 ### Reset button
-The reset button you can use it to restart the game board the timer and the scoreboard every time gets clicked.
+The reset button you can use it to restart the game board and the scoreboard every time gets clicked.
 
 ![Screenshot (30)](https://user-images.githubusercontent.com/127791713/233341465-87fc12a3-1e45-42bd-a5f5-a374271f0cc7.png)
 
@@ -53,19 +48,18 @@ The Footer it's a brief introduction for the game rules.
 By default, the game starts in two-player mode. Player X starts the game.
 If you want to play against the computer, change the player selection option to "Computer."
 Click on an empty square to make a move.
-The timer counts down from 15 seconds for each player's turn. If time runs out, the turn switches to the other player or the computer.
 The game continues until there is a winner or a tie.
 The winning combination will be highlighted on the board and on The pop up message.
 The score for each player is displayed below the board.
 To reset the game board and the scoreboard, click the "Reset" button.
 
 ## Implementation Details
-The game is implemented using JavaScript, with event listeners for user interactions such as selecting squares, resetting the board, and changing player options. The game logic includes functions for checking win conditions, checking for a tie, handling timers, and updating scores. In single-player mode, the computer opponent utilizes a minimax algorithm to determine its moves, with a configurable probability of making random moves for varying difficulty levels.
+The game is implemented using JavaScript, with event listeners for user interactions such as selecting squares, resetting the board, and changing player options. The game logic includes functions for checking win conditions, checking for a tie, and updating scores. In single-player mode, the computer opponent utilizes a minimax algorithm to determine its moves, with a configurable probability of making random moves for varying difficulty levels.
 
 ## Testing
 I tested the game is working on different browsers and different size screens and it is responsive.
 
-![Screenshot (34)](https://user-images.githubusercontent.com/127791713/233452739-7c1d0f51-613d-4274-bbfa-3feee5841b13.png)
+![Screenshot (55)](https://github.com/Attila-fawal/tic-tac-toe-game/assets/127791713/e7c73262-28cd-4580-b529-e7faf61f881f)
 
 ## Bugs fix
 . When I testing the game on small screens the X and the O was bigger then the square itself so it stretching it out so I needed to use media query for the symbols and for the squares.
@@ -93,8 +87,8 @@ A button for the users with the name difficulty level so they can adjust the ran
 Metrics:
 There are 22 functions in this file.
 Function with the largest signature take 2 arguments, while the median is 0.
-Largest function has 23 statements in it, while the median is 4.5.
-The most complex function has a cyclomatic complexity value of 12 while the median is 2.
+Largest function has 20 statements in it, while the median is 2.5.
+The most complex function has a cyclomatic complexity value of 10 while the median is 1.
 
 ![Screenshot (22)](https://user-images.githubusercontent.com/127791713/233452406-dd464c59-6300-451a-b89e-87bdc8303219.png)
 
