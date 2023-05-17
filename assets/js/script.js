@@ -7,8 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const playerSelect = document.getElementById('player-select');
     const playerXScore = document.getElementById('player-x-score');
     const playerOScore = document.getElementById('player-o-score');
-    const timerElement = document.getElementById('timer');
-    let countdownInterval;
 
     // Variables
     let currentPlayer = 'X';
@@ -17,18 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
         X: 0,
         O: 0
     };
-
     // event listeners for each square
     squares.forEach(square => {
         square.addEventListener('click', () => {
             if (square.textContent !== '' || (isAgainstComputer && currentPlayer === 'O')) {
                 return;
             }
-            clearInterval(countdownInterval);
 
             // Update square with the current player's symbol
             square.textContent = currentPlayer;
             square.classList.add(currentPlayer === 'X' ? 'x-symbol' : 'o-symbol');
+
+            // Check for a tie
+            if (checkTie()) {
+                alert('It\'s a tie!');
+                resetBoard();
+                return;
+            }
 
             // Check for win and update scores
             if (checkWin()) {
@@ -39,13 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Check for a tie
-            if (checkTie()) {
-                alert('It\'s a tie!');
-                resetBoard();
-                return;
-            }
-
             // Switch current player
             currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
 
@@ -53,10 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (isAgainstComputer && currentPlayer === 'O') {
                 playAgainstComputer();
             }
-            if (!checkWin() && !checkTie()) {
-                startTimer();
-            }
-
         });
     });
 
@@ -113,7 +105,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * @param {Boolean} resetScores Reset scores if set to true.
      */
     function resetBoard(resetScores = false) {
-        clearInterval(countdownInterval);
         squares.forEach(square => {
             square.textContent = '';
             square.classList.remove('x-symbol', 'o-symbol', 'winning-square', 'x-score-color', 'o-score-color');
@@ -126,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateScore();
         }
 
-        startTimer();
+
     }
 
     /**
@@ -139,33 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /**
-     * Start the countdown timer for each player's turn.
-     */
-    function startTimer() {
-        clearInterval(countdownInterval);
-        let timeLeft = 15;
-        timerElement.textContent = timeLeft;
 
-        countdownInterval = setInterval(() => {
-            timeLeft--;
-            timerElement.textContent = timeLeft;
-
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-                if (isAgainstComputer && currentPlayer === 'O') {
-                    playAgainstComputer();
-                } else {
-                    startTimer();
-                }
-            }
-        }, 1000);
-
-        if (isAgainstComputer && currentPlayer === 'O') {
-            playAgainstComputer();
-        }
-    }
 
     /**
      * Evaluate the board to determine the score for the computer's move.
@@ -297,22 +262,28 @@ document.addEventListener('DOMContentLoaded', () => {
         selectedSquare.textContent = 'O';
         selectedSquare.classList.add('o-symbol');
 
+        // Check for win and update scores
         if (checkWin()) {
-            alert('Computer wins!');
-            resetBoard();
+            setTimeout(() => {
+                alert('Computer wins!');
+                resetBoard();
+            }, 100);
             return;
         }
 
+        // Check for a tie
         if (checkTie()) {
-            alert('It\'s a tie!');
-            resetBoard();
+            setTimeout(() => {
+                alert('It\'s a tie!');
+                resetBoard();
+            }, 100);
             return;
         }
 
-        // If the game is still ongoing, switch to the player's turn and start the timer
+        // If the game is still ongoing, switch to the player's turn
         currentPlayer = 'X';
-        startTimer();
     }
+
 
 
     /**

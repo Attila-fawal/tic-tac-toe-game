@@ -126,20 +126,6 @@ h1 {
     font-size: 120px;
 }
 
-#timer {
-    font-size: 60px;
-    font-weight: bold;
-    width: 90px;
-    margin-right: 10px;
-    margin-top: -750px;
-    text-align: center;
-    color: #000000;
-    float: right;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
 
 .x-score-color {
     background-color: #06a2d1;
@@ -200,12 +186,7 @@ p {
         padding: 8px 16px;
     }
 
-    #timer {
-        font-size: 30px;
-        width: 70px;
-        padding: 8px;
-        margin-top: 10px;
-    }
+
 
     label {
         font-size: 18px;
